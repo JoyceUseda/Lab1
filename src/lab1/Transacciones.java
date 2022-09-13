@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package lab1;
 
 import java.text.SimpleDateFormat;
@@ -12,16 +9,20 @@ import java.util.Calendar;
  * @author andre
  */
 public abstract class Transacciones {
+    Clientes cliente;
+    CuentaColones colones;
+    CuentaDolares dolares;
 
     protected int Id;
     protected String fecha;
     protected String cuenta;
-    //protected String cuentadestino;
+    protected String cuentadestino;
     protected float monto;
+    protected float saldo;
     protected float saldoanterior;
     protected float saldofinal;
-    //protected double saldoanteriordestino;
-    //protected double saldofinaldestino;
+    protected float saldoanteriordestino;
+    protected float saldofinaldestino;
     
 
     public int getId() {
@@ -35,10 +36,10 @@ public abstract class Transacciones {
     public String getCuenta() {
         return cuenta;
     }
-//
-//    public String getCuentadestino() {
-//        return cuentadestino;
-//    }
+
+    public String getCuentadestino() {
+        return cuentadestino;
+    }
 
     public double getMonto() {
         return monto;
@@ -48,6 +49,15 @@ public abstract class Transacciones {
         this.monto = monto;
     }
 
+    public float getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(float saldo) {
+        this.saldo = saldo;
+    }
+    
+    
     public double getSaldoanterior() {
         return saldoanterior;
     }
@@ -56,33 +66,39 @@ public abstract class Transacciones {
         return saldofinal;
     }
 
-//    public double getSaldoanteriordestino() {
-//        return saldoanteriordestino;
-//    }
-//
-//    public double getSaldofinaldestino() {
-//        return saldofinaldestino;
-//    }
-//    public abstract void Transaccion(String cuenta, double monto);
-//
-//  
-//    public Transacciones(int Id, String cuenta, double monto, double saldoanterior, double saldofinal) {
-//
-//        this.Id = Id;
-//        this.fecha = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(Calendar.getInstance().getTime());
-//        this.cuenta = cuenta;
-//        this.monto = monto;
-//        this.saldoanterior = saldoanterior;
-//        this.saldofinal = saldofinal;
-//    }
-//    public Transacciones(int Id, String cuentaorigen, String cuentadestino, double monto, double saldoanterior, double saldofinal, double saldoanteriordestino, double saldofinaldestino) {
-//        this.Id = Id;
-//        this.cuenta = cuentaorigen;
-//        this.cuentadestino = cuentadestino;
-//        this.monto = monto;
-//        this.saldoanterior = saldoanterior;
-//        this.saldofinal = saldofinal;
-//        this.saldoanteriordestino = saldoanteriordestino;
-//        this.saldofinaldestino = saldofinaldestino;
-//    }
+    public double getSaldoanteriordestino() {
+        return saldoanteriordestino;
+    }
+
+    public double getSaldofinaldestino() {
+        return saldofinaldestino;
+    }
+      public abstract void TransferirColones(String cuenta, String cuentadestino, float monto);
+      public abstract void TransferirDolares(String cuenta, String cuentadestino, float monto);
+      public abstract void DepositoColones(String cuenta, float monto);
+      public abstract void DepositoDolares(String cuenta, float monto);
+//    public abstract void RetiroColones(String cuenta, double monto);
+//    public abstract void RetiroDolares()
+
+  
+    public Transacciones(int Id, String cuenta, float monto, float saldoanterior, float saldofinal) {
+
+        this.Id = Id;
+        this.fecha = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(Calendar.getInstance().getTime());
+        this.cuenta = cuenta;
+        this.monto = monto;
+        this.saldoanterior = saldoanterior;
+        this.saldofinal = saldofinal;
+    }
+    public Transacciones(int Id, String cuentaorigen, String cuentadestino, float monto, float saldoanterior,
+                         float saldofinal, float saldoanteriordestino, float saldofinaldestino) {
+        this.Id = Id;
+        this.cuenta = cuentaorigen;
+        this.cuentadestino = cuentadestino;
+        this.monto = monto;
+        this.saldoanterior = saldoanterior;
+        this.saldofinal = saldofinal;
+        this.saldoanteriordestino = saldoanteriordestino;
+        this.saldofinaldestino = saldofinaldestino;
+    }
 }

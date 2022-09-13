@@ -48,5 +48,13 @@ public class CuentaDolares {
         return Float.compare(numeroC.saldo, saldo)== 0 &&
                 Objects.equals(numeroCuenta,numeroC.numeroCuenta);   
 }
+ 
+ public void movimientoRetiroDolares(float monto){
+        saldo= saldo-monto;
+    }
+
+    public void movimientoDepositoDolares(float monto){
+        saldo= saldo+monto;
+    }
 }
  

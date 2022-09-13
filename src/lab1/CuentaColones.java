@@ -15,7 +15,7 @@ public class CuentaColones {
         return numeroCuenta;
     }
 
-    public double getSaldo() {
+    public float getSaldo() {
         return saldo;
     }
 
@@ -42,7 +42,14 @@ public class CuentaColones {
     public CuentaColones(String numeroCuenta) {
         this.numeroCuenta = numeroCuenta;
     }
+    
+    public void movimientoRetiroColones(float monto){
+        saldo= saldo-monto;
+    }
 
+    public void movimientoDepositoColones(float monto){
+        saldo= saldo+monto;
+    }
 
 }
 

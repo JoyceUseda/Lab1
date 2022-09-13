@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package lab1;
 
 /**
@@ -9,17 +6,35 @@ package lab1;
  * @author andre
  */
 public class Retiro extends Transacciones {
-
-//    public Retiro(int Id, String cuenta, double monto, double saldoanterior, double saldofinal) {
-//        super(Id, cuenta, monto, saldoanterior, saldofinal);
-//    }
-   
-
-    public void RetiroColones(String cuenta, double monto) {
-        this.cuenta = colones.;
-        this.saldoanterior = this.getSaldo();
-        this.saldo = -monto;
+    
+   public void RetiroColones(String cuenta, float monto) {
+        this.cuenta = cliente.buscarCuentaColones(cuenta);
+        this.saldoanterior = colones.getSaldo();
+        this.saldo = saldo-monto;
         this.saldofinal = this.getSaldo();
+    }
+
+    public void RetiroDolares(String cuenta, float monto) {
+        this.cuenta = cliente.buscarCuentaDolares(cuenta);
+        this.saldoanterior = colones.getSaldo();
+        this.saldo = saldo-monto;
+        this.saldofinal = this.getSaldo();
+    }
+
+    @Override
+    public void TransferirColones(String cuenta, String cuentadestino, float monto) {
+    }
+
+    @Override
+    public void TransferirDolares(String cuenta, String cuentadestino, float monto) {
+    }
+
+    @Override
+    public void DepositoColones(String cuenta, float monto) {
+    }
+
+    @Override
+    public void DepositoDolares(String cuenta, float monto) {
     }
 
 }
