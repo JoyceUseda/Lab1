@@ -1,13 +1,14 @@
-
 package lab1;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 /**
  *
  * @author ADMIN
  */
 public class Clientes {
+
     private String nombre;
     private String cedula;
     private Integer fechaNacimiento;
@@ -75,5 +76,43 @@ public class Clientes {
         this.dolares = dolares;
     }
 
-}
+//    public CuentaDolares buscarCtaDol(Integer cuenta) {
+//        CuentaDolares buscar = new CuentaDolares(cuenta);
+//        boolean existe = listaCuentaDolares.contains(buscar);
+//        if (existe) {
+//            
+//        }
+//    }
 
+    public String buscarCuentaColones(String numeroCuenta) {
+        CuentaColones busqueda = new CuentaColones(numeroCuenta);
+        boolean existe = listaCuentaColones.contains(busqueda);
+        if (existe) {
+            return numeroCuenta;
+        } else {
+            return null;
+        }
+    }
+
+    public String buscarCuentaDolares(String numeroCuenta) {
+        CuentaDolares busqueda = new CuentaDolares(numeroCuenta);
+        boolean existe = listaCuentaDolares.contains(busqueda);
+        if (existe) {
+            return numeroCuenta;
+        } else {
+            return null;
+        }
+    }
+
+//    public boolean equals(Object cuenta) {
+//        if (this == cuenta) {
+//            return true;
+//        }
+//        if (cuenta == null || getClass() != cuenta.getClass()) {
+//            return false;
+//        }
+//        CuentaDolares numeroC = (CuentaDolares) cuenta;
+//        return Objects.equals(numeroCuenta, numeroC.numeroCuenta);
+//    }
+
+}

@@ -8,11 +8,11 @@ import java.util.Objects;
  * @author ADMIN
  */
 public class CuentaDolares {
-    private Integer numeroCuenta;
+    private String numeroCuenta;
     private float saldo;
     private static double tipoCambio;
 
-    public Integer getNumeroCuenta() {
+    public String getNumeroCuenta() {
         return numeroCuenta;
     }
 
@@ -28,7 +28,11 @@ public class CuentaDolares {
         this.tipoCambio = tipoCambio;
     }
 
-    public CuentaDolares(Integer numeroCuenta, float saldo) {
+    public CuentaDolares(String numeroCuenta) {
+        this.numeroCuenta = numeroCuenta;
+    }
+
+    public CuentaDolares(String numeroCuenta, float saldo) {
         this.numeroCuenta = numeroCuenta;
         this.saldo = saldo;
     }

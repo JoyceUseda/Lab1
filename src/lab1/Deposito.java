@@ -4,21 +4,25 @@
  */
 package lab1;
 
+import java.util.Objects;
+
 /**
  *
  * @author andre
  */
 public class Deposito extends Transacciones {
 
-    public Deposito(int Id, String cuenta, double monto, double saldoanterior, double saldofinal) {
-        super(Id, cuenta, monto, saldoanterior, saldofinal);
-    }
+//    public Deposito(int Id, String cuenta, double monto, double saldoanterior, double saldofinal) {
+//        super(Id, cuenta, monto, saldoanterior, saldofinal);
+//    }
+    Clientes cliente;
+    CuentaColones colones;
 
-    public void Transaccion(String cuenta, double monto) {
-        this.cuentadestino = cuenta;
-        this.saldoanterior = this.getSaldo();
-        this.saldo=+monto;
-        this.saldofinal = this.getSaldo();
+    public void DepositoColones(String cuenta, float monto) {
+        this.cuenta = cliente.buscarCuentaColones(cuenta);
+        this.saldoanterior = (float) colones.getSaldo();
+        this.colones.setSaldo();
+        this.saldofinal = (float) colones.getSaldo();
     }
 
 }

@@ -8,10 +8,10 @@ import java.util.Objects;
  * @author ADMIN
  */
 public class CuentaColones {
-    private Integer numeroCuenta;
+    private String numeroCuenta;
     private float saldo;
 
-    public Integer getNumeroCuenta() {
+    public String getNumeroCuenta() {
         return numeroCuenta;
     }
 
@@ -25,7 +25,7 @@ public class CuentaColones {
 
 
 
-    public CuentaColones(Integer numeroCuenta, float saldo) {
+    public CuentaColones(String numeroCuenta, float saldo) {
         this.numeroCuenta = numeroCuenta;
         this.saldo = saldo;
     }
@@ -38,6 +38,11 @@ public class CuentaColones {
                 Objects.equals(numeroCuenta,numeroC.numeroCuenta);
 
     }
+
+    public CuentaColones(String numeroCuenta) {
+        this.numeroCuenta = numeroCuenta;
+    }
+
 
 }
 

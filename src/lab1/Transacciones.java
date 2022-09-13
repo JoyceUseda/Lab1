@@ -17,11 +17,12 @@ public abstract class Transacciones {
     protected String fecha;
     protected String cuenta;
     //protected String cuentadestino;
-    protected double monto;
-    protected double saldoanterior;
-    protected double saldofinal;
+    protected float monto;
+    protected float saldoanterior;
+    protected float saldofinal;
     //protected double saldoanteriordestino;
     //protected double saldofinaldestino;
+    
 
     public int getId() {
         return Id;
@@ -43,7 +44,7 @@ public abstract class Transacciones {
         return monto;
     }
 
-    public void setMonto(double monto) {
+    public void setMonto(float monto) {
         this.monto = monto;
     }
 
@@ -62,20 +63,18 @@ public abstract class Transacciones {
 //    public double getSaldofinaldestino() {
 //        return saldofinaldestino;
 //    }
-
-    public abstract void Transaccion(String cuenta, double monto);
-
-  
-    public Transacciones(int Id, String cuenta, double monto, double saldoanterior, double saldofinal) {
-
-        this.Id = Id;
-        this.fecha = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(Calendar.getInstance().getTime());
-        this.cuenta = cuenta;
-        this.monto = monto;
-        this.saldoanterior = saldoanterior;
-        this.saldofinal = saldofinal;
-    }
-
+//    public abstract void Transaccion(String cuenta, double monto);
+//
+//  
+//    public Transacciones(int Id, String cuenta, double monto, double saldoanterior, double saldofinal) {
+//
+//        this.Id = Id;
+//        this.fecha = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(Calendar.getInstance().getTime());
+//        this.cuenta = cuenta;
+//        this.monto = monto;
+//        this.saldoanterior = saldoanterior;
+//        this.saldofinal = saldofinal;
+//    }
 //    public Transacciones(int Id, String cuentaorigen, String cuentadestino, double monto, double saldoanterior, double saldofinal, double saldoanteriordestino, double saldofinaldestino) {
 //        this.Id = Id;
 //        this.cuenta = cuentaorigen;
@@ -86,5 +85,4 @@ public abstract class Transacciones {
 //        this.saldoanteriordestino = saldoanteriordestino;
 //        this.saldofinaldestino = saldofinaldestino;
 //    }
-
 }

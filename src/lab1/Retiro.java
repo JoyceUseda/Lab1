@@ -10,14 +10,15 @@ package lab1;
  */
 public class Retiro extends Transacciones {
 
-    public Retiro(int Id, String cuenta, double monto, double saldoanterior, double saldofinal) {
-        super(Id, cuenta, monto, saldoanterior, saldofinal);
-    }
+//    public Retiro(int Id, String cuenta, double monto, double saldoanterior, double saldofinal) {
+//        super(Id, cuenta, monto, saldoanterior, saldofinal);
+//    }
+   
 
-    public void Transaccion(String cuenta, double monto) {
-        this.cuenta = cuenta;
+    public void RetiroColones(String cuenta, double monto) {
+        this.cuenta = colones.;
         this.saldoanterior = this.getSaldo();
-        this.saldo=-monto;
+        this.saldo = -monto;
         this.saldofinal = this.getSaldo();
     }
 
