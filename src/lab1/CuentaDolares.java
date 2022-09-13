@@ -10,7 +10,7 @@ import java.util.Objects;
 public class CuentaDolares {
     private String numeroCuenta;
     private float saldo;
-    private static double tipoCambio;
+    private static float tipoCambio;
 
     public String getNumeroCuenta() {
         return numeroCuenta;
@@ -20,11 +20,15 @@ public class CuentaDolares {
         return saldo;
     }
 
-    public double getTipoCambio() {
+    public void setSaldo(float saldo) {
+        this.saldo = saldo;
+    }
+    
+    public float getTipoCambio() {
         return tipoCambio;
     }
 
-    public void setTipoCambio(double tipoCambio) {
+    public void setTipoCambio(float tipoCambio) {
         this.tipoCambio = tipoCambio;
     }
 
