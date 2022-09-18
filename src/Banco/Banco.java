@@ -1,5 +1,14 @@
-package lab1;
+package Banco;
 
+import Transacciones.Transferencia;
+import Transacciones.Retiro;
+import Transacciones.Deposito;
+import Transacciones.Transacciones;
+import Clientes.Clientes;
+import Cuentas.CuentaDolares;
+import Cuentas.CuentaColones;
+import Tarjetas.TarjetaDebito;
+import Tarjetas.TarjetaCredito;
 import java.util.ArrayList;
 
 /**

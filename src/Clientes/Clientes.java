@@ -1,5 +1,9 @@
-package lab1;
+package Clientes;
 
+import Cuentas.CuentaDolares;
+import Cuentas.CuentaColones;
+import Tarjetas.TarjetaDebito;
+import Tarjetas.TarjetaCredito;
 import java.util.ArrayList;
 import java.util.Objects;
 

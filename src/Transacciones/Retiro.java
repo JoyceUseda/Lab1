@@ -1,5 +1,7 @@
 
-package lab1;
+package Transacciones;
+
+import Transacciones.Transacciones;
 
 /**
  *

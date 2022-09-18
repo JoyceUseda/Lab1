@@ -1,6 +1,9 @@
 
-package lab1;
+package Transacciones;
 
+import Clientes.Clientes;
+import Cuentas.CuentaDolares;
+import Cuentas.CuentaColones;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
