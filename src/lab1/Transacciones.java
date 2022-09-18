@@ -81,24 +81,23 @@ public abstract class Transacciones {
 //    public abstract void RetiroDolares()
 
   
-    public Transacciones(int Id, String cuenta, float monto, float saldoanterior, float saldofinal) {
+    public Transacciones(int Id, String cuenta, float monto) {
 
         this.Id = Id;
         this.fecha = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(Calendar.getInstance().getTime());
         this.cuenta = cuenta;
         this.monto = monto;
-        this.saldoanterior = saldoanterior;
-        this.saldofinal = saldofinal;
+//        this.saldoanterior = saldoanterior;
+//        this.saldofinal = saldofinal;
     }
-    public Transacciones(int Id, String cuentaorigen, String cuentadestino, float monto, float saldoanterior,
-                         float saldofinal, float saldoanteriordestino, float saldofinaldestino) {
+    public Transacciones(int Id, String cuentaorigen, String cuentadestino, float monto) {
         this.Id = Id;
         this.cuenta = cuentaorigen;
         this.cuentadestino = cuentadestino;
         this.monto = monto;
-        this.saldoanterior = saldoanterior;
-        this.saldofinal = saldofinal;
-        this.saldoanteriordestino = saldoanteriordestino;
-        this.saldofinaldestino = saldofinaldestino;
+//        this.saldoanterior = saldoanterior;
+//        this.saldofinal = saldofinal;
+//        this.saldoanteriordestino = saldoanteriordestino;
+//        this.saldofinaldestino = saldofinaldestino;
     }
 }

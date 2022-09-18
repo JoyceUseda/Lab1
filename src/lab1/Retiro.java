@@ -6,19 +6,23 @@ package lab1;
  * @author andre
  */
 public class Retiro extends Transacciones {
+
+    public Retiro(int Id, String cuenta, float monto) {
+        super(Id, cuenta, monto);
+    }
     
    public void RetiroColones(String cuenta, float monto) {
         this.cuenta = cliente.buscarCuentaColones(cuenta);
         this.saldoanterior = colones.getSaldo();
-        this.saldo = saldo-monto;
-        this.saldofinal = this.getSaldo();
+        colones.movimientoRetiroColones(monto);
+        this.saldofinal = colones.getSaldo();
     }
 
     public void RetiroDolares(String cuenta, float monto) {
         this.cuenta = cliente.buscarCuentaDolares(cuenta);
         this.saldoanterior = colones.getSaldo();
-        this.saldo = saldo-monto;
-        this.saldofinal = this.getSaldo();
+        dolares.movimientoRetiroDolares(monto);
+        this.saldofinal = colones.getSaldo();
     }
 
     @Override

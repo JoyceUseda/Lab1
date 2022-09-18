@@ -6,12 +6,16 @@ package lab1;
  * @author andre
  */
 public class Deposito extends Transacciones {
+
+    public Deposito(int Id, String cuenta, float monto) {
+        super(Id, cuenta, monto);
+    }
     
     @Override
     public void DepositoColones(String cuenta, float monto) {
         this.cuenta = cliente.buscarCuentaColones(cuenta);
         this.saldoanterior = colones.getSaldo();
-        saldo = saldo+monto;
+        colones.movimientoDepositoColones(monto);
         this.saldofinal = colones.getSaldo();
     }
     
@@ -19,7 +23,7 @@ public class Deposito extends Transacciones {
     public void DepositoDolares(String cuenta, float monto){
         this.cuenta = cliente.buscarCuentaDolares(cuenta);
         this.saldoanterior = dolares.getSaldo();
-        saldo = saldo+monto;
+        dolares.movimientoDepositoDolares(monto);
         this.saldofinal = dolares.getSaldo();
     }
 

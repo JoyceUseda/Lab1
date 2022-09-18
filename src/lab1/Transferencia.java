@@ -6,17 +6,21 @@ package lab1;
  * @author andre
  */
 public class Transferencia extends Transacciones {
+
+    public Transferencia(int Id, String cuentaorigen, String cuentadestino, float monto) {
+        super(Id, cuentaorigen, cuentadestino, monto);
+    }
     
     
     @Override
     public void TransferirColones(String cuenta, String cuentadestino, float monto) {
         this.cuenta = cliente.buscarCuentaColones(cuenta);
         this.saldoanterior = this.getSaldo();
-        this.saldo = -monto;
+        colones.movimientoRetiroColones(monto);
         this.saldofinal = this.getSaldo();
         this.cuentadestino = cliente.buscarCuentaColones(cuentadestino);
         this.saldoanteriordestino = this.getSaldo();
-        this.saldo = +monto;
+        colones.movimientoDepositoColones(monto);
         this.saldofinaldestino = this.getSaldo();
     }
     
@@ -24,11 +28,11 @@ public class Transferencia extends Transacciones {
      public void TransferirDolares(String cuenta, String cuentadestino, float monto) {
         this.cuenta = cliente.buscarCuentaDolares(cuenta);
         this.saldoanterior = this.getSaldo();
-        this.saldo = -monto;
+        dolares.movimientoRetiroDolares(monto);
         this.saldofinal = this.getSaldo();
         this.cuentadestino = cliente.buscarCuentaDolares(cuentadestino);
         this.saldoanteriordestino = this.getSaldo();
-        this.saldo = +monto;
+        dolares.movimientoRetiroDolares(monto);
         this.saldofinaldestino = this.getSaldo();
     }
 
