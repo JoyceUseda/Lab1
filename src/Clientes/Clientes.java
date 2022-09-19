@@ -1,7 +1,9 @@
 package Clientes;
 
-import Cuentas.CuentaDolares;
+
+import Cuentas.Cuenta;
 import Cuentas.CuentaColones;
+import Cuentas.CuentaDolares;
 import Tarjetas.TarjetaDebito;
 import Tarjetas.TarjetaCredito;
 import java.util.ArrayList;
@@ -19,8 +21,7 @@ public class Clientes {
     private String correo;
     private Integer telefono;
     private int edad;
-    private ArrayList<CuentaDolares> listaCuentaDolares;
-    private ArrayList<CuentaColones> listaCuentaColones;
+    private ArrayList<Cuenta> listaCuentas;
     public ArrayList<TarjetaDebito> listaTarjetaDebito;
     public ArrayList<TarjetaCredito> listaTarjetaCredito;
 
@@ -51,21 +52,15 @@ public class Clientes {
         return edad;
     }
 
-    public ArrayList<CuentaDolares> getListaCuentaDolares() {
-        return listaCuentaDolares;
-    }
-
-    public ArrayList<CuentaColones> getListaCuentaColones() {
-        return listaCuentaColones;
-    }
+    
 
     public ArrayList<TarjetaCredito> getListaTarjetaCredito() {
         return listaTarjetaCredito;
     }
 
     public Clientes(String nombre, String cedula, Integer fechaNacimiento, String correo,
-            Integer telefono, int edad, ArrayList<CuentaDolares> listaCuentaDolares,
-            ArrayList<CuentaColones> listaCuentaColones, ArrayList<TarjetaCredito> listaTarjetaCredito,
+            Integer telefono, int edad,
+           ArrayList<TarjetaCredito> listaTarjetaCredito,
             CuentaColones colones, CuentaDolares dolares) {
         this.nombre = nombre;
         this.cedula = cedula;
@@ -73,8 +68,7 @@ public class Clientes {
         this.correo = correo;
         this.telefono = telefono;
         this.edad = edad;
-        this.listaCuentaDolares = listaCuentaDolares;
-        this.listaCuentaColones = listaCuentaColones;
+        
         this.listaTarjetaCredito = listaTarjetaCredito;
         this.colones = colones;
         this.dolares = dolares;
@@ -89,8 +83,8 @@ public class Clientes {
 //    }
 
     public String buscarCuentaColones(String numeroCuenta) {
-        CuentaColones busqueda = new CuentaColones(numeroCuenta);
-        boolean existe = listaCuentaColones.contains(busqueda);
+        Cuenta busquedaColones = new Cuenta(numeroCuenta);
+        boolean existe = listaCuentas.contains(busquedaColones);
         if (existe) {
             return numeroCuenta;
         } else {
@@ -99,8 +93,8 @@ public class Clientes {
     }
 
     public String buscarCuentaDolares(String numeroCuenta) {
-        CuentaDolares busqueda = new CuentaDolares(numeroCuenta);
-        boolean existe = listaCuentaDolares.contains(busqueda);
+        Cuenta busquedaDolares = new Cuenta(numeroCuenta);
+        boolean existe = listaCuentas.contains(busquedaDolares);
         if (existe) {
             return numeroCuenta;
         } else {
