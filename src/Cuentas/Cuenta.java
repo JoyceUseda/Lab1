@@ -9,6 +9,7 @@ package Cuentas;
  * @author ADMIN
  */
 public class Cuenta {
+
     protected String numeroCuenta;
     protected float saldo;
 
@@ -25,10 +26,10 @@ public class Cuenta {
     }
 
     public void setSaldo(float saldo) {
-        if( saldo<0){
-            this.saldo= 0;
-        }else{
-            this.saldo= saldo;
+        if (saldo < 0) {
+            this.saldo = 0;
+        } else {
+            this.saldo = saldo;
         }
     }
 
@@ -39,7 +40,7 @@ public class Cuenta {
 
     public Cuenta(String numeroCuenta) {
         this.numeroCuenta = numeroCuenta;
+        this.saldo = 0;
     }
-    
-   
+
 }
