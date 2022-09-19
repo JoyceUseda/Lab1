@@ -5,6 +5,7 @@ import Transacciones.Retiro;
 import Transacciones.Deposito;
 import Transacciones.Transacciones;
 import Clientes.Clientes;
+import Cuentas.Cuenta;
 import Cuentas.CuentaDolares;
 import Cuentas.CuentaColones;
 import Tarjetas.TarjetaDebito;
@@ -17,19 +18,18 @@ import java.util.ArrayList;
  */
 public class Banco {
 
+    Cuenta cuenta;
     TarjetaDebito debito;
     TarjetaCredito credito;
     Transferencia transferir;
     Deposito depositar;
     Retiro retirar;
-    
+
     //Atributos
     private ArrayList<Clientes> ListaClientes;
-    private ArrayList<CuentaDolares> ListaCuentaDolares;
-    private ArrayList<CuentaColones> ListaCuentaColones;
+    private ArrayList<Cuenta> listaCuenta;
     private ArrayList<Transacciones> ListaTransacciones;
-    
-    
+
     //Metodos
     public void agregarClientes(Clientes cliente) {
         ListaClientes.add(cliente);
@@ -61,12 +61,10 @@ public class Banco {
 
     public void agregarTarjetaCredito(Clientes cliente) {
         cliente.listaTarjetaCredito.add(credito);
-
     }
 
     public void eliminarTarjetaCredito(Clientes cliente) {
         cliente.listaTarjetaCredito.remove(credito);
-
     }
 
     public void asignarTarjetaDebito(Clientes cliente) {
@@ -86,6 +84,15 @@ public class Banco {
         ListaTransacciones.add(retirar);
     }
 
+    public String buscarCuentas(String numeroCuenta) {
+        Cuenta busqueda = new Cuenta(numeroCuenta);
+        boolean existe = listaCuenta.contains(busqueda);
+        if (existe) {
+            return cuenta.getNumeroCuenta();
+        } else {
+            return null;
+        }
+    }
     //Constructor
-   
+
 }
