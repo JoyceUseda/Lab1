@@ -1,7 +1,5 @@
-
 package Transacciones;
 
-import Transacciones.Transacciones;
 
 /**
  *
@@ -9,41 +7,38 @@ import Transacciones.Transacciones;
  */
 public class Transferencia extends Transacciones {
 
-    public Transferencia(int Id, String cuentaorigen, String cuentadestino, float monto) {
-        super(Id, cuentaorigen, cuentadestino, monto);
-    }
-    
-    
-    @Override
-    public void TransferirColones(String cuenta, String cuentadestino, float monto) {
-        this.cuenta = cliente.buscarCuentaColones(cuenta);
-        this.saldoanterior = this.getSaldo();
-        colones.movimientoRetiroColones(monto);
-        this.saldofinal = this.getSaldo();
-        this.cuentadestino = cliente.buscarCuentaColones(cuentadestino);
-        this.saldoanteriordestino = this.getSaldo();
-        colones.movimientoDepositoColones(monto);
-        this.saldofinaldestino = this.getSaldo();
-    }
-    
-    @Override
-     public void TransferirDolares(String cuenta, String cuentadestino, float monto) {
-        this.cuenta = cliente.buscarCuentaDolares(cuenta);
-        this.saldoanterior = this.getSaldo();
-        dolares.movimientoRetiroDolares(monto);
-        this.saldofinal = this.getSaldo();
-        this.cuentadestino = cliente.buscarCuentaDolares(cuentadestino);
-        this.saldoanteriordestino = this.getSaldo();
-        dolares.movimientoRetiroDolares(monto);
-        this.saldofinaldestino = this.getSaldo();
+    private String cuentaDestino;
+    private float saldoAnteriorDestino;
+    private float saldoFinalDestino;
+
+    public String getCuentaDestino() {
+        return cuentaDestino;
     }
 
-    @Override
-    public void DepositoColones(String cuenta, float monto) {
+    public float getSaldoAnteriorDestino() {
+        return saldoAnteriorDestino;
     }
 
+    public float getSaldoFinalDestino() {
+        return saldoFinalDestino;
+    }
+
+    public Transferencia(String cuentaDestino, int Id, String cuenta, float monto) {
+        super(Id, cuenta, monto);
+        this.cuentaDestino = bc.buscarCuentas(cuenta);
+    }
+
+
     @Override
-    public void DepositoDolares(String cuenta, float monto) {
+    public void Movimiento(String cuenta, float monto) {
+        this.cuenta = bc.buscarCuentas(cuenta);
+        this.saldoanterior = ct.getSaldo();
+        ct.movimientoRetiro(monto);
+        this.saldofinal = ct.getSaldo();
+        this.cuentaDestino = this.getCuentaDestino();
+        this.saldoAnteriorDestino= ct.getSaldo();
+        ct.movimientoDeposito(monto);
+        this.saldoFinalDestino = ct.getSaldo();
     }
 
 }
