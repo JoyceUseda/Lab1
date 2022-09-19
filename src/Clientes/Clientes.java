@@ -1,14 +1,8 @@
 package Clientes;
-
-
 import Cuentas.Cuenta;
-import Cuentas.CuentaColones;
-import Cuentas.CuentaDolares;
 import Tarjetas.TarjetaDebito;
 import Tarjetas.TarjetaCredito;
 import java.util.ArrayList;
-import java.util.Objects;
-
 /**
  *
  * @author ADMIN
@@ -22,11 +16,9 @@ public class Clientes {
     private Integer telefono;
     private int edad;
     private ArrayList<Cuenta> listaCuentas;
-    public ArrayList<TarjetaDebito> listaTarjetaDebito;
-    public ArrayList<TarjetaCredito> listaTarjetaCredito;
+    private ArrayList<TarjetaCredito> listaTarjetaCredito;
+    private TarjetaDebito tarjetaDebito;
 
-    CuentaColones colones;
-    CuentaDolares dolares;
 
     public String getNombre() {
         return nombre;
@@ -52,65 +44,41 @@ public class Clientes {
         return edad;
     }
 
-    
+    public ArrayList<Cuenta> getListaCuentas() {
+        return listaCuentas;
+    }
+
+    public TarjetaDebito getTarjetaDebito() {
+        return tarjetaDebito;
+    }
 
     public ArrayList<TarjetaCredito> getListaTarjetaCredito() {
         return listaTarjetaCredito;
     }
 
-    public Clientes(String nombre, String cedula, Integer fechaNacimiento, String correo,
-            Integer telefono, int edad,
-           ArrayList<TarjetaCredito> listaTarjetaCredito,
-            CuentaColones colones, CuentaDolares dolares) {
+    public Clientes(String nombre, String cedula, Integer fechaNacimiento,
+            String correo, Integer telefono, int edad, ArrayList<Cuenta> listaCuentas,
+            ArrayList<TarjetaCredito> listaTarjetaCredito,
+            TarjetaDebito tarjetaDebito) {
         this.nombre = nombre;
         this.cedula = cedula;
         this.fechaNacimiento = fechaNacimiento;
         this.correo = correo;
         this.telefono = telefono;
         this.edad = edad;
-        
+        this.listaCuentas = listaCuentas;
         this.listaTarjetaCredito = listaTarjetaCredito;
-        this.colones = colones;
-        this.dolares = dolares;
+        this.tarjetaDebito = tarjetaDebito;
     }
 
-//    public CuentaDolares buscarCtaDol(Integer cuenta) {
-//        CuentaDolares buscar = new CuentaDolares(cuenta);
-//        boolean existe = listaCuentaDolares.contains(buscar);
-//        if (existe) {
-//            
-//        }
-//    }
-
-    public String buscarCuentaColones(String numeroCuenta) {
-        Cuenta busquedaColones = new Cuenta(numeroCuenta);
-        boolean existe = listaCuentas.contains(busquedaColones);
+    public String buscarCuentas(String numeroCuenta) {
+        Cuenta busqueda = new Cuenta(numeroCuenta);
+        boolean existe = listaCuentas.contains(busqueda);
         if (existe) {
             return numeroCuenta;
         } else {
             return null;
         }
     }
-
-    public String buscarCuentaDolares(String numeroCuenta) {
-        Cuenta busquedaDolares = new Cuenta(numeroCuenta);
-        boolean existe = listaCuentas.contains(busquedaDolares);
-        if (existe) {
-            return numeroCuenta;
-        } else {
-            return null;
-        }
-    }
-
-//    public boolean equals(Object cuenta) {
-//        if (this == cuenta) {
-//            return true;
-//        }
-//        if (cuenta == null || getClass() != cuenta.getClass()) {
-//            return false;
-//        }
-//        CuentaDolares numeroC = (CuentaDolares) cuenta;
-//        return Objects.equals(numeroCuenta, numeroC.numeroCuenta);
-//    }
 
 }
