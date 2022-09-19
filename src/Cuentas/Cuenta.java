@@ -8,7 +8,7 @@ package Cuentas;
  *
  * @author ADMIN
  */
-public class Cuenta {
+public abstract class Cuenta {
 
     protected String numeroCuenta;
     protected float saldo;

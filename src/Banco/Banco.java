@@ -27,8 +27,10 @@ public class Banco {
 
     //Atributos
     private ArrayList<Clientes> ListaClientes;
-    private ArrayList<Cuenta> listaCuenta;
     private ArrayList<Transacciones> ListaTransacciones;
+    private ArrayList<Cuenta> listaCuentas;
+    protected ArrayList<TarjetaCredito> listaTarjetaCredito;
+    private TarjetaDebito tarjetaDebito;
 
     //Metodos
     public void agregarClientes(Clientes cliente) {
@@ -40,22 +42,22 @@ public class Banco {
     }
 
     public void agregarCuentaDolar(CuentaDolares dolares) {
-        ListaCuentaDolares.add(dolares);
+        listaCuentas.add(dolares);
     }
 
     public void agregarCuentaColon(CuentaColones colones) {
-        ListaCuentaColones.add(colones);
+        listaCuentas.add(colones);
     }
 
-    public void eliminarCuentaDolar(CuentaColones dolar) {
+    public void eliminarCuentaDolar(CuentaDolares dolar) {
         if (dolar.getSaldo() == 0) {
-            ListaCuentaColones.remove(dolar);
+            listaCuentas.remove(dolar);
         }
     }
 
     public void eliminarCuentaColon(CuentaColones colones) {
         if (colones.getSaldo() == 0) {
-            ListaCuentaColones.remove(colones);
+            listaCuentas.remove(colones);
         }
     }
 
@@ -68,8 +70,8 @@ public class Banco {
     }
 
     public void asignarTarjetaDebito(Clientes cliente) {
-        debito = new TarjetaDebito();
-        cliente.listaTarjetaDebito.add(debito);
+//        debito = new TarjetaDebito();
+        cliente.tarjetaDebito.equals(debito);
     }
 
     public void agregarTransferencia(Transferencia trasferir) {
@@ -85,14 +87,12 @@ public class Banco {
     }
 
     public String buscarCuentas(String numeroCuenta) {
-        Cuenta busqueda = new Cuenta(numeroCuenta);
-        boolean existe = listaCuenta.contains(busqueda);
+        Cuenta busqueda = new Cuenta(numeroCuenta) {};
+        boolean existe = listaCuentas.contains(busqueda);
         if (existe) {
             return cuenta.getNumeroCuenta();
         } else {
             return null;
         }
     }
-    //Constructor
-
 }

@@ -16,8 +16,8 @@ public class Clientes {
     private Integer telefono;
     private int edad;
     private ArrayList<Cuenta> listaCuentas;
-    private ArrayList<TarjetaCredito> listaTarjetaCredito;
-    private TarjetaDebito tarjetaDebito;
+    public ArrayList<TarjetaCredito> listaTarjetaCredito;
+    public TarjetaDebito tarjetaDebito;
 
 
     public String getNombre() {
@@ -68,17 +68,8 @@ public class Clientes {
         this.edad = edad;
         this.listaCuentas = listaCuentas;
         this.listaTarjetaCredito = listaTarjetaCredito;
-        this.tarjetaDebito = tarjetaDebito;
+//        this.tarjetaDebito = new TarjetaDebito();
     }
 
-    public String buscarCuentas(String numeroCuenta) {
-        Cuenta busqueda = new Cuenta(numeroCuenta);
-        boolean existe = listaCuentas.contains(busqueda);
-        if (existe) {
-            return numeroCuenta;
-        } else {
-            return null;
-        }
+  
     }
-
-}
