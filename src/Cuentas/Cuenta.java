@@ -43,4 +43,16 @@ public class Cuenta {
         this.saldo = 0;
     }
 
+    public void movimientoRetiro(float monto) {
+        if (saldo < monto) {
+            System.out.println("Monto mayor a saldo actual en la cuenta no se puede realizar retiro");
+        } else {
+            this.saldo = saldo - monto;
+        }
+    }
+
+    public void movimientoDeposito(float monto) {
+        this.saldo = saldo + monto;
+    }
+
 }

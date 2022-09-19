@@ -43,11 +43,4 @@ public class CuentaDolares extends Cuenta {
                 && Objects.equals(numeroCuenta, numeroC.numeroCuenta);
     }
 
-    public void movimientoRetiroDolares(float monto) {
-        saldo = saldo - monto;
-    }
-
-    public void movimientoDepositoDolares(float monto) {
-        saldo = saldo + monto;
-    }
 }

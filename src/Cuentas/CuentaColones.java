@@ -26,13 +26,6 @@ public class CuentaColones extends Cuenta{
 
     }
 
-    public void movimientoRetiroColones(float monto){
-        saldo= saldo-monto;
-    }
-
-    public void movimientoDepositoColones(float monto){
-        saldo= saldo+monto;
-    }
-
+ 
 }
 
