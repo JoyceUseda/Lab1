@@ -7,27 +7,14 @@ import java.util.Objects;
  *
  * @author ADMIN
  */
-public class CuentaColones {
-    private String numeroCuenta;
-    private float saldo;
-
-    public String getNumeroCuenta() {
-        return numeroCuenta;
-    }
-
-    public float getSaldo() {
-        return saldo;
-    }
-
-    public void setSaldo(float saldo) {
-        this.saldo = saldo;
-    }
-
-
+public class CuentaColones extends Cuenta{
 
     public CuentaColones(String numeroCuenta, float saldo) {
-        this.numeroCuenta = numeroCuenta;
-        this.saldo = saldo;
+        super(numeroCuenta, saldo);
+    }
+
+    public CuentaColones(String numeroCuenta) {
+        super(numeroCuenta);
     }
 
     public boolean identificarCuenta(Object cuenta){
@@ -39,10 +26,6 @@ public class CuentaColones {
 
     }
 
-    public CuentaColones(String numeroCuenta) {
-        this.numeroCuenta = numeroCuenta;
-    }
-    
     public void movimientoRetiroColones(float monto){
         saldo= saldo-monto;
     }
