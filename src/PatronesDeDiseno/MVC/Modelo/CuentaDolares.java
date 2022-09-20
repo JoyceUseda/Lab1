@@ -1,5 +1,6 @@
-package Cuentas;
+package PatronesDeDiseno.MVC.Modelo;
 
+import Cuentas.*;
 import java.util.Objects;
 
 /**
